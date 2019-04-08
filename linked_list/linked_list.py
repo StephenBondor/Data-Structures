@@ -78,38 +78,3 @@ class LinkedList:
             current = current.get_next()
         # we've traversed the entire list
         return False
-
-    def len(self):
-        # make sure we don't have an empty list
-        if not self.head and not self.tail:
-            return 0
-        # init a current reference to refer to the current
-        # node we're iterating on
-        current = self.head
-        length = 0
-        # while the current node in the list is a valid Node
-        while current:
-            # increment the length
-            length = length + 1
-            # update the current reference to the next
-            # node in the list
-            current = current.get_next()
-        # we've traversed the entire list
-        return length
-
-
-class Queue:
-    def __init__(self):
-        self.size = 0
-        # what data structure should we
-        # use to store queue elements?
-        self.storage = LinkedList()
-
-    def enqueue(self, item):
-        self.storage.add_to_tail(item)
-
-    def dequeue(self):
-        return self.storage.remove_from_head()
-
-    def len(self):
-        return self.storage.len()
